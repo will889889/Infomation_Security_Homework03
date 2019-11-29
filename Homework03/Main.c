@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "aes.h"
-
+#include "PPMReader.h"
 
 int main(void)
 {
