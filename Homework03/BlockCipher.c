@@ -175,6 +175,3 @@ void BC_PPM_decrypt(unsigned char *buffer, int length, unsigned char *key, int k
 			k = 0;
 	}
 }
-//aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
-//bb bb bb bb bb bb bb bb bb bb bb bb bb bb bb bb
-//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
