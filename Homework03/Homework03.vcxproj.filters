@@ -21,9 +21,15 @@
     <ClCompile Include="aes.c">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="PPMReader.c">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aes.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="PPMReader.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

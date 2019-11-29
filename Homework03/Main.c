@@ -20,6 +20,11 @@ int main(void)
 	int i, ret, c;
 	unsigned char empty[16];
 
+	PPMImage *image;
+	image = readPPM("gunter.ppm");
+	printf("read ppm done");
+	writePPM("EncryptrdGunter.ppm", image);
+
 #ifndef AES256
 #error "Need to use AES256"
 #endif
