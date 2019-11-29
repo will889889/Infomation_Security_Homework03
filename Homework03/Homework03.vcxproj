@@ -116,10 +116,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="aes.c" />
+    <ClCompile Include="BlockCipher.c" />
     <ClCompile Include="Main.c" />
+    <ClCompile Include="PPMReader.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aes.h" />
+    <ClInclude Include="BlockCipher.h" />
+    <ClInclude Include="PPMReader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
