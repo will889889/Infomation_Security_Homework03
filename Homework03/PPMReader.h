@@ -2,5 +2,17 @@
 #include <stdio.h>  
 #include <stdlib.h>
 
-void ReadPPM(const char* file_path, int* width, int* height, char* pixels);
-void WritePPM(const char* file_path, const int width, const int height, const int color, const char* pixels);
+typedef struct {
+	unsigned char red, green, blue;
+} PPMPixel;
+
+typedef struct {
+	int x, y;
+	PPMPixel *data;
+} PPMImage;
+
+#define CREATOR "RPFELGUEIRAS"
+#define RGB_COMPONENT_COLOR 255
+
+PPMImage *readPPM(const char *filename);
+void writePPM(const char *filename, PPMImage *img);

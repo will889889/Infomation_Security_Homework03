@@ -14,7 +14,21 @@ int main(void)
 	0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa,
 	};
 
-	BC_ECB_encrypt(buf, key);
+	PPMImage *image;
+	image = readPPM("gunter.ppm");
+	printf("read ppm done");
+	writePPM("EncryptrdGunter.ppm", image);
+
+#ifndef AES256
+#error "Need to use AES256"
+#endif
+	//{ // Do encryption 
+	//	struct AES_ctx ctx;
+	//	fp = NULL;
+	//	fopen_s(fp, "aes.c", "r");
+	//	ret = fread(buf, 1, sizeof(buf), fp);
+	//	fclose(fp);
+	//	fprintf(stderr, "Raw File len=%d, will gen aes.c.enc\n", ret);
 
 	printf("\n\n");
 
