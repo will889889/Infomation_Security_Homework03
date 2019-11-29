@@ -16,3 +16,5 @@ typedef struct {
 
 PPMImage *readPPM(const char *filename);
 void writePPM(const char *filename, PPMImage *img);
+unsigned char *PixelData(const PPMImage *input);
+void ToPPMImage(const unsigned char *input, PPMImage *output);

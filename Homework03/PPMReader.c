@@ -103,3 +103,29 @@ void writePPM(const char *filename, PPMImage *img)
 	fwrite(img->data, 3 * img->x, img->y, fp);
 	fclose(fp);
 }
+
+unsigned char *PixelData(const PPMImage *input)
+{
+	int lenthOfPixel = input->x * input->y;
+	char *output = malloc(sizeof(unsigned char) * lenthOfPixel * 3);
+
+	for (int i = 0; i < lenthOfPixel; i++)
+	{
+		output[i * 3] = input->data[i].red;
+		output[i * 3 + 1] = input->data[i].green;
+		output[i * 3 + 2] = input->data[i].blue;
+	}
+
+	return output;
+}
+
+void ToPPMImage(const unsigned char *input, PPMImage *output)
+{
+	int lenthOfPixel = output->x * output->y;
+	for (int i = 0; i < lenthOfPixel; i++)
+	{
+		output->data[i].red = input[i * 3];
+		output->data[i].green = input[i * 3 + 1];
+		output->data[i].blue = input[i * 3 + 2];
+	}
+}
