@@ -16,43 +16,43 @@ int main(void)
 
 #pragma region ECB
 	//	Encrypt
-	image = readPPM("gunter.ppm");
+	image = readPPM("PlainImage.ppm");
 
 	buffer = PixelData(image);
 	BC_ECB_encrypt(buffer, image->x * image->y * 3, key);
 	ToPPMImage(buffer, image);
 
-	writePPM("EncryptrdGunter_ECB.ppm", image);
+	writePPM("EncryptedImage_ECB.ppm", image);
 
 	//	Decrypt
-	image = readPPM("EncryptrdGunter_ECB.ppm");
+	image = readPPM("EncryptedImage_ECB.ppm");
 
 	buffer = PixelData(image);
 	BC_ECB_decrypt(buffer, image->x * image->y * 3, key);
 	ToPPMImage(buffer, image);
 
-	writePPM("DecryptrdGunter_ECB.ppm", image);
+	writePPM("DecryptedImage_ECB.ppm", image);
 	printf("ECB done\n");
 #pragma endregion
 
 #pragma region CBC
 	//	Encrypt
-	image = readPPM("gunter.ppm");
+	image = readPPM("PlainImage.ppm");
 
 	buffer = PixelData(image);
 	BC_CBC_encrypt(buffer, image->x * image->y * 3, key, IV);
 	ToPPMImage(buffer, image);
 
-	writePPM("EncryptrdGunter_CBC.ppm", image);
+	writePPM("EncryptedImage_CBC.ppm", image);
 
 	//	Decrypt
-	image = readPPM("EncryptrdGunter_CBC.ppm");
+	image = readPPM("EncryptedImage_CBC.ppm");
 
 	buffer = PixelData(image);
 	BC_CBC_decrypt(buffer, image->x * image->y * 3, key, IV);
 	ToPPMImage(buffer, image);
 
-	writePPM("DecryptrdGunter_CBC.ppm", image);
+	writePPM("DecryptedImage_CBC.ppm", image);
 	printf("CBC done\n");
 #pragma endregion
 	
@@ -61,7 +61,7 @@ int main(void)
 	unsigned char *keyBuffer;
 
 	//	Encrypt
-	image = readPPM("gunter.ppm");
+	image = readPPM("PlainImage.ppm");
 	keyImage = readPPM("PPMkey.ppm");
 
 	buffer = PixelData(image);
@@ -69,16 +69,16 @@ int main(void)
 	BC_PPM_encrypt(buffer, image->x * image->y * 3, keyBuffer, keyImage->x * keyImage->y * 3);
 	ToPPMImage(buffer, image);
 
-	writePPM("EncryptrdGunter_PPM.ppm", image);
+	writePPM("EncryptedImage_PPM.ppm", image);
 
 	//	Decrypt
-	image = readPPM("EncryptrdGunter_PPM.ppm");
+	image = readPPM("EncryptedImage_PPM.ppm");
 
 	buffer = PixelData(image);
 	BC_PPM_decrypt(buffer, image->x * image->y * 3, keyBuffer, keyImage->x * keyImage->y * 3);
 	ToPPMImage(buffer, image);
 
-	writePPM("DecryptrdGunter_PPM.ppm", image);
+	writePPM("DecryptedImage_PPM.ppm", image);
 	printf("PPM done\n");
 #pragma endregion
 
