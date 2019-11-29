@@ -14,6 +14,25 @@ int main(void)
 	PPMImage *image;
 	unsigned char *buffer;
 
+	printf("Please enter the key (16 bytes as hex):\n");
+	for (int i = 0; i < 16; i++)
+	{
+		unsigned int temp;
+		scanf_s("%x", &temp);
+		key[i] = temp;
+	}
+	printf("Please enter the Initial Vector (16 bytes as hex):\n");
+	for (int i = 0; i < 16; i++)
+	{
+		unsigned int temp;
+		scanf_s("%x", &temp);
+		IV[i] = temp;
+	}
+	/*for (int i = 0; i < 16; i++)
+	{
+		printf("%02hhx ", key[i]);
+	}*/
+
 #pragma region ECB
 	//	Encrypt
 	image = readPPM("PlainImage.ppm");
@@ -82,7 +101,6 @@ int main(void)
 	printf("PPM done\n");
 #pragma endregion
 
-	
 	system("pause");
 	return 0;
 }

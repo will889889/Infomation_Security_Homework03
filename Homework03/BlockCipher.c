@@ -21,10 +21,6 @@ void BC_ECB_encrypt(unsigned char *buffer, int length, unsigned char *key)
 			buffer[i + b] = buf16[b];
 		}
 	}
-	/*for (int i = 0; i < 16; i++)
-	{
-		printf("%02hhx ", buffer[i]);
-	}*/
 }
 
 void BC_ECB_decrypt(unsigned char *buffer, int length, unsigned char *key)
@@ -180,3 +176,5 @@ void BC_PPM_decrypt(unsigned char *buffer, int length, unsigned char *key, int k
 	}
 }
 //aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
+//bb bb bb bb bb bb bb bb bb bb bb bb bb bb bb bb
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
